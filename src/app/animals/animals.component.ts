@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-//import { AngularFirestore } from 'angularfire2/firestore'
+import { AngularFirestore } from 'angularfire2/firestore'
 
 @Component({
   selector: 'app-animals',
@@ -7,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./animals.component.sass']
 })
 export class AnimalsComponent implements OnInit {
-
-  constructor() { }
+  animals$;
+  constructor(private afs: AngularFirestore) { }
 
   ngOnInit(): void {
+    this.animals$ = this.afs.collection('animals').valueChanges();
   }
 
 }
