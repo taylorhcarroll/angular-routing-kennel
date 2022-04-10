@@ -1,1 +1,19 @@
-<p>animals works!</p>
+<h1>
+    Animal List</h1>
+
+<ul>
+    <li *ngFor="let animal of animals$ | async">
+        <!-- brackets around the routerLink allows you to pass expression -->
+        <a [routerLink]="['/animals', animal.name]">{{ animal.name }}</a>
+    </li>
+
+</ul>
+
+<router-outlet></router-outlet>
+
+<!-- database will be hooked up to firestarter and will be a collection of animals lool like:
+
+bio: "The aardvark is a medium-sized burrowing, noctural mammal native to Africa."
+img: "animals/aardvark.jpeg"
+imgURL: "data:image/jpeg;base64,/..."
+name: "Aardvark" -->
