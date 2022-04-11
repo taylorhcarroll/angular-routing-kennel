@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,13 +17,13 @@ import { AnimalDetailComponent } from './animal-detail/animal-detail.component';
 const config = require('./config.json');
 const firebaseConfig = {
 
-  apiKey: config.firebaseConfig.apiKey,
-  authDomain: config.firebaseConfig.authDomain,
-  projectId: config.firebaseConfig.projectId,
-  storageBucket: config.firebaseConfig.storageBucket,
-  messagingSenderId: config.firebaseConfig.messagingSenderId,
-  appId: config.firebaseConfig.appId,
-  measurementId: config.firebaseConfig.measurementId
+  apiKey: config.firebaseConfigDev.apiKey,
+  authDomain: config.firebaseConfigDev.authDomain,
+  projectId: config.firebaseConfigDev.projectId,
+  storageBucket: config.firebaseConfigDev.storageBucket,
+  messagingSenderId: config.firebaseConfigDev.messagingSenderId,
+  appId: config.firebaseConfigDev.appId,
+  measurementId: config.firebaseConfigDev.measurementId
 };
 
 
@@ -32,7 +36,11 @@ const firebaseConfig = {
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(config),
+    AngularFirestoreModule, // firestore
+    AngularFireAuthModule, // auth
+    AngularFireStorageModule // storage
   ],
   providers: [],
   bootstrap: [AppComponent]
