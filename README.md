@@ -1,3 +1,28 @@
+To handle env based config variables, please input something like the following in `enviroment.ts` or `enviroment.prod.ts`
+
+```
+export const environment = {
+  production: false,
+  firebase: {
+    apiKey: '',
+    authDomain: '',
+    projectId: '',
+    storageBucket: '',
+    messagingSenderId: '',
+    appId: '',
+    measurementId: ''
+  }
+};
+```
+
+If trying to use imports from a json file, you will need to add to the compilerOptions in your tsconfig.json like so:
+```
+"compilerOptions": {
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true
+}
+```
+By default these are not enabled as it is thought that importing as large json file could slow things down, which is true.
 # AngularRoutingKennel
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.2.

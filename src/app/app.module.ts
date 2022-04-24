@@ -4,7 +4,8 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import firebaseConfig from './config.json'
+// import firebaseConfig from './config.json'
+import { environment } from '../environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,13 +18,13 @@ import { AnimalDetailComponent } from './animal-detail/animal-detail.component';
 //not because I'm paranoid but because it's a good habit to keep up.
 const config = {
 
-  apiKey: firebaseConfig.firebaseConfigDev.apiKey,
-  authDomain: firebaseConfig.firebaseConfigDev.authDomain,
-  projectId: firebaseConfig.firebaseConfigDev.projectId,
-  storageBucket: firebaseConfig.firebaseConfigDev.storageBucket,
-  messagingSenderId: firebaseConfig.firebaseConfigDev.messagingSenderId,
-  appId: firebaseConfig.firebaseConfigDev.appId,
-  measurementId: firebaseConfig.firebaseConfigDev.measurementId
+  apiKey: environment.firebase.apiKey,
+  authDomain: environment.firebase.authDomain,
+  projectId: environment.firebase.projectId,
+  storageBucket: environment.firebase.storageBucket,
+  messagingSenderId: environment.firebase.messagingSenderId,
+  appId: environment.firebase.appId,
+  measurementId: environment.firebase.measurementId
 };
 
 
