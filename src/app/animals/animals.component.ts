@@ -7,7 +7,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore'
   styleUrls: ['./animals.component.sass']
 })
 export class AnimalsComponent implements OnInit {
-  animals$;
+  animals$: any;
   constructor(private afs: AngularFirestore) { }
 
   ngOnInit(): void {
