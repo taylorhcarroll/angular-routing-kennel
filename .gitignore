@@ -43,3 +43,4 @@ Thumbs.db
 
 # Stored Credentials
 config.json
+/src/environments/**
